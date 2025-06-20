@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: jp1rvyuko-python 
+  janus-idp.io/tekton: jp1rvyuko-python
+  backstage.io/kubernetes-id: jp1rvyuko-python
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: jp1rvyuko-python
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
